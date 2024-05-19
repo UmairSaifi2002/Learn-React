@@ -1,14 +1,34 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
 import './App.css'
 
+// let counter = 0
+
 function App() {
-  const [count, setCount] = useState(0)
+  // aur hamesa jab bhi ham useState ko use krtey h to usse do variable m store karaty h
+  // kyuki useState hame do values provide krta h
+  // see below how we handle this
+  // to ham isse ek array m store krtey h
+  // aur 0th index pr hamri value hoti h jisy 1st index wala method operate krta h
+  let [counter,setcounter] = useState(0) // that's how we can hook this useState method
+  // const [count, setCount] = useState(0)
+  //counter = 0;
+  const AddValue = () => {
+    console.log("Counter is increased by one", counter);
+    //counter = counter + 1
+    setcounter(counter + 1)
+  }
+  
+  const SubtractValue = () => {
+    console.log("Counter is decreased by one", counter);
+    //counter = counter - 1
+    setcounter(counter - 1)
+  }
 
   return (
     <>
-      <div>
+      {/* <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -27,7 +47,11 @@ function App() {
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
-      </p>
+      </p> */}
+      <h1>Chai aur React</h1>
+      <h2>Counter value : {counter}</h2>
+      <button onClick={AddValue}  >Add value {counter}</button>
+      <button onClick={SubtractValue} >subtract value {counter}</button>
     </>
   )
 }
