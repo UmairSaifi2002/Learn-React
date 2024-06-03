@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react' // yaha jo ham use state import kara rhe h to y hooks k concept ho ja ta h
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
@@ -7,6 +7,7 @@ import './App.css'
 
 function App() {
   // aur hamesa jab bhi ham useState ko use krtey h to usse do variable m store karaty h
+  // is mese first ko value assign hoti h aur second ko function milta h
   // kyuki useState hame do values provide krta h
   // see below how we handle this
   // to ham isse ek array m store krtey h
@@ -17,13 +18,13 @@ function App() {
   const AddValue = () => {
     console.log("Counter is increased by one", counter);
     //counter = counter + 1
-    setcounter(counter + 1)
+    if (counter < 20)  setcounter(counter + 1) 
   }
   
   const SubtractValue = () => {
     console.log("Counter is decreased by one", counter);
     //counter = counter - 1
-    setcounter(counter - 1)
+    if (counter > -10)  setcounter(counter - 1)
   }
 
   return (
