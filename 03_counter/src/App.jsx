@@ -24,7 +24,7 @@ function App() {
   const SubtractValue = () => {
     console.log("Counter is decreased by one", counter);
     //counter = counter - 1
-    if (counter > -10)  setcounter(counter - 1)
+    if (counter > 0)  setcounter(counter - 1)
   }
 
   return (
