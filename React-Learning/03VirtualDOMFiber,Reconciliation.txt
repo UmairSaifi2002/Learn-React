@@ -1,0 +1,22 @@
+We gonna Learn about Virtual DOM, Fibre, Reconciliation in React.js
+
+in Virtual DOM we track the the DOM in Tree like Structure so the changed value get replace only and remaining will same
+
+every ui donot need to update simultaneously but it will refer to apply some algorithm to wait for the final request and
+only work/respond for the final rrequest 
+means only update the ui on the final request and donot response to the intermediate requests
+so it will help to build good application for specific rules
+
+so we want to learn React Fiber
+React uses fiber algorithm to update the Virtual DOM or Ui behind the scene
+
+Reconciliation is a react algorithm which reconsider in recurrsive way to whom will update
+it will update only the changes
+Reconciliation is th algorithm behind what is popularly understood as the "Virtual DOM"
+
+Although Fiber is a ground-up rewrite of the reconciler, the high-level algorithm described 
+in the React docs will be largely the same. The key points are:
+
+-> Different component types are assumed to generate substantially different trees. 
+   React will not attempt to diff them, but rather replace the old tree completely.
+-> Diffing of lists is performed using keys. Keys should be "stable, predictable, and unique."
