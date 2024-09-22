@@ -1,0 +1,28 @@
+  Now we gonna Learn an interview Question which is asked in React interview
+
+  so Question is -> in given function
+  let [counter, setCounter] = useState(0)
+
+  let addValue = () => {
+    setCounter(counter +1)
+    setCounter(counter +1)
+    setCounter(counter +1)
+    setCounter(counter +1)
+  }
+	tell me that what is the value of the counter when the user click the button to add the value
+	is it +4 or not
+
+	Answer -> Due to Fiber Concept React take it as the batch process so it only add the value by +1
+		  
+	Counter Question by interviewer -> so what is the processor to add the value like the function shows
+	Answer -> so we know that 'setCounter returns the function to add the value'
+		  so if we use arrow function to add the value so it add the values as much times you want in this manner
+
+let [counter, setCounter] = useState(0)
+
+  let addValue = () => {
+    setCounter(counter => counter +1)
+    setCounter(counter => counter +1)
+    setCounter(counter => counter +1)
+    setCounter(counter => counter +1)
+  }
