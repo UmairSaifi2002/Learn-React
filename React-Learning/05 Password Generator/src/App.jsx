@@ -7,6 +7,10 @@ function App() {
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [charAllowed, setCharAllowed] = useState(false)
   const [password, setPassword] = useState("")
+  const [hoverColor, setHoverColor] = useState(false);
+
+  const handleMouseEnter = () => setHoverColor(true)
+  const handleMouseLeave = () => setHoverColor(false)
 
   //useRef hook
   const passwordRef = useRef(null)
@@ -40,20 +44,23 @@ function App() {
   
   return (
     
-    <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-800 text-orange-500">
-      <h1 className='text-white text-center my-3'>Password generator</h1>
+    <div className="w-full max-w-2xl mx-auto shadow-md rounded-3xl px-8 py-16 my-16 bg-gray-800 text-orange-500">
+      <h1 className='text-white text-center my-3 text-4xl'>Password generator</h1>
     <div className="flex shadow rounded-lg overflow-hidden mb-4">
         <input
             type="text"
             value={password}
-            className="outline-none w-full py-1 px-3"
+            className="outline-none w-full py-1 px-3 text-3xl"
             placeholder="Password"
             readOnly
             ref={passwordRef}
         />
         <button
         onClick={copyPasswordToClipboard}
-        className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0'
+        className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0 text-xl'
+        style={{backgroundColor: hoverColor?"green":"blue"}}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         >copy</button>
         
     </div>
@@ -67,7 +74,7 @@ function App() {
          className='cursor-pointer'
          onChange={(e) => {setLength(e.target.value)}}
           />
-          <label>Length: {length}</label>
+          <label className='text-xl'>Length: {length}</label>
       </div>
       <div className="flex items-center gap-x-1">
       <input
@@ -78,7 +85,7 @@ function App() {
               setNumberAllowed((prev) => !prev);
           }}
       />
-      <label htmlFor="numberInput">Numbers</label>
+      <label htmlFor="numberInput" className='text-xl' >Numbers</label>
       </div>
       <div className="flex items-center gap-x-1">
           <input
@@ -89,7 +96,7 @@ function App() {
                   setCharAllowed((prev) => !prev )
               }}
           />
-          <label htmlFor="characterInput">Characters</label>
+          <label htmlFor="characterInput" className='text-xl' >Characters</label>
       </div>
     </div>
 </div>
