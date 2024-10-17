@@ -17,9 +17,9 @@ function Github() {
 //   });
 
   return (
-    <div className="text-center m-4 bg-gray-700 text-white p-4 text-3xl">
-      Github Followers : {}
-      <img src={data.avatar_url} alt="Git Picture" width={300} />
+    <div className="text-center m-4 bg-teal-50 text-white p-4 text-4xl rounded-3xl text-zinc-800 flex flex-col items-center gap-8 shadow-xl shadow-gray-500/90">
+      Repo Count : {data.public_repos}
+      <img className="rounded-3xl text-center shadow-xl shadow-gray-500/90" src={data.avatar_url} alt="Git Picture" width={300} />
     </div>
   );
 }

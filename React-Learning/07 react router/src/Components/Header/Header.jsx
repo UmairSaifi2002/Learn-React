@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
-// instead of using 'a tag' we usinf Link
+// instead of using 'a tag' we using  Link
 // a tag reload the page everytime so we are using react in which it works without reloading 
 // so we using link tag 
 // a -> Link  , href -> to
