@@ -9,7 +9,7 @@ function App() {
 
   const addTodo = (todo) => {
     /*
-//       [{ id: Date.now(), ...todo }, ...prev]:
+//       [{ id: Date.now(), ...todo }, ...prev]: 
 //       A new todo object is created here:
 //       id: Date.now(): Generates a unique timestamp as the ID for the new todo.
 //       ...todo: Spreads the properties of the passed-in todo object into the new todo object.
@@ -114,14 +114,14 @@ function App() {
 
   return (
     <TodoProvider value={{todos, addTodo, updateTodo, deleteTodo, toggleComplete}}>
-      <div className="bg-[#172842] min-h-screen py-8">
-                <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-white">
-                    <h1 className="text-2xl font-bold text-center mb-8 mt-2">Manage Your Todos</h1>
-                    <div className="mb-4">
+      <div className=" min-h-screen py-8 ">
+                <div className="w-full max-w-2xl mx-auto shadow-2xl rounded-lg px-4 py-10 text-white bg-[rgb(105,107,111)] ">
+                    <h1 className="text-4xl font-bold text-center mb-8 mt-2">Manage Your Todos</h1>
+                    <div className="mb-4 shadow-xl text-md">
                         {/* Todo form goes here */} 
                         <TodoForm />
                     </div>
-                    <div className="flex flex-wrap gap-y-3">
+                    <div className="flex flex-wrap gap-y-3 shadow-2xl text-xl">
                         {/*Loop and Add TodoItem here */}
                         {todos.map((todo) => (
                           <div key={todo.id}
